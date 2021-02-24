@@ -19,3 +19,4 @@ Route::get('create-categories','CategoryController@create');
 Route::post('store-categories','CategoryController@store');
 Route::get('edit-categories/{id}','CategoryController@edit');
 Route::post('update-categories/{id}','CategoryController@update');
+Route::delete('delete-categories/{id}','CategoryController@destroy');

@@ -41,15 +41,22 @@
     				</tr>
   				</thead>
   				<tbody>
+  					@php
+  					$index=1;
+  					@endphp
   					@foreach($categories as $key)
     					<tr>
-    						<td>{{$key->id}}</td>
+    						<td>{{$index++}}</td>
       						<td>{{$key->name}}</td>
       						<td>{{$key->description}}</td>
       						<td>
-      							<button type="button" class="btn btn-secondary"><a href="">View</a></button>
-      							<button type="button" class="btn btn-secondary"><a href="edit-categories/{{$key->id}}">Edit</a></button>
-      							<button type="button" class="btn btn-secondary"><a href="">Delete</a></button>
+      							<form action="delete-categories/{{$key->id}}" method="post">
+      								@csrf
+      								@method('delete')
+      								<button type="button" class="btn btn-secondary"><a href="">View</a></button>
+      								<button type="button" class="btn btn-secondary"><a href="edit-categories/{{$key->id}}">Edit</a></button>
+      								<button type="submit" class="btn btn-secondary">Delete</button>
+      							</form>
       						</td>
     					</tr>
     				@endforeach
