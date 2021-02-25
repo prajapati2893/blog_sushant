@@ -23,7 +23,7 @@
 				   	   <a class="nav-link" href="create-categories">Create</a>
 				    </li>
 				    <li class="nav-item">
-        				<a class="nav-link" href="get-categories">View</a>
+        				<a class="nav-link" href="get-categories">View All</a>
       				</li>
     			</ul>
   			</div>
@@ -53,7 +53,7 @@
       							<form action="delete-categories/{{$key->id}}" method="post">
       								@csrf
       								@method('delete')
-      								<button type="button" class="btn btn-secondary"><a href="">View</a></button>
+      								<button type="button" class="btn btn-secondary"><a href="show-categories/{{$key->id}}">View</a></button>
       								<button type="button" class="btn btn-secondary"><a href="edit-categories/{{$key->id}}">Edit</a></button>
       								<button type="submit" class="btn btn-secondary">Delete</button>
       							</form>

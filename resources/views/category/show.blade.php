@@ -33,27 +33,15 @@
 				<div class="col-3"></div>
 				<div class="col-6">
 					<div class="title m-b-md">
-                		Edit Blogs
+                		<label class="form-label">{{$category->name}}</label>
             		</div>
-				<form action="/update-categories/{{$category->id}}" method="post" class="mt-2">
-					@csrf
-		  			<div class="form-group">
-		    			<label for="exampleInputEmail1" class="form-label">Name</label>
-		    			<input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$category->name}}">
-		  			</div>
-		  			<div class="form-group">
-	    				<label for="exampleInputPassword1" class="form-label">Description</label>
-	    				<input type="text" class="form-control" name="description" id="exampleInputPassword1" value="{{$category->description}}">
+		  			<div class="mt-5">
+	    				<h3>{{$category->description}}</h3>
 	  				</div>
-	  				<div class="form-group mt-3">
-				  		<div class="form-floating">
-  							<textarea class="form-control" name="content" id="floatingTextarea2" style="height: 250px">{{$category->content}}</textarea>
-  							<label for="floatingTextarea2">Content</label>
-						</div>	
-				  	</div>
-	  				<button type="submit" class="btn btn-primary mt-3">Submit</button>
-				</form>
-			</div>
+	  				<div class="mt-5">
+	    				<h4>{{$category->content}}</h4>
+	  				</div>
+				</div>
 			<div class="col-3"></div>
 			</div>
 		</div>

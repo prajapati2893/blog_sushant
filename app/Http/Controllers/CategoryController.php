@@ -40,6 +40,7 @@ class CategoryController extends Controller
         $category = new Category;
         $category->name=$request->name;
         $category->description=$request->description;
+        $category->content=$request->content;
         $category->save();
         return redirect('get-categories');
     }
@@ -52,7 +53,9 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = Category::find($id);
+        //dd($category);
+        return view('category.show',compact('category'));
     }
 
     /**
@@ -64,6 +67,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
+        //dd($category);
         return view('category.edit',compact('category'));
     }
 
@@ -79,6 +83,7 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->name=$request->name;
         $category->description=$request->description;
+        $category->content=$request->content;
         $category->save();
         return redirect('get-categories');
     }
